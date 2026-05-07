@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere | Academic Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="hero-body">
+    
+    <!-- 1. The Navigation Bar -->
+    <header class="hero-navbar">
+        <div class="hero-logo">
+            <!-- A simple, clean SVG icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 21V12.9999C9 12.9999 9.00001 8.99999 12 8.99999C15 8.99999 15 13 15 13V21M5 21H19M3 6.99999L12 3L21 6.99999" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>ResultSphere</span>
+        </div>
+        <nav class="hero-nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="result.html">Results</a>
+            <a href="about.html">About</a>
+            <a href="login.html" id="authBtn" class="hero-login-btn">Student Login</a>
+        </nav>
+    </header>
+
+    <!-- 2. The Hero Section -->
+    <main class="hero-section">
+        <div class="hero-content">
+            <!-- 3. The Pill Badge -->
+            <div class="hero-badge">
+                <span class="glowing-dot"></span>
+                Academic Results Portal
+            </div>
+
+            <!-- The Main Heading -->
+            <h1 class="hero-heading">
+                Your Academic Journey,<br>
+                <span class="highlight-text">One Click Away</span>
+            </h1>
+
+            <!-- The Subtitle -->
+            <p class="hero-subtitle">
+                Access your semester results, track your GPA, and monitor your academic progress — all in one place.
+            </p>
+
+            <!-- 4. The Search/Action Bar -->
+            <div class="hero-action-bar">
+                <select id="semesterSelect" class="hero-select">
+                    <option value="">Select Semester</option>
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                    <option value="3">3rd Semester</option>
+                    <option value="4">4th Semester</option>
+                    <option value="5">5th Semester</option>
+                    <option value="6">6th Semester</option>
+                    <option value="7">7th Semester</option>
+                    <option value="8">8th Semester</option>
+                </select>
+                <input type="text" id="studentSearchInput" class="hero-input" placeholder="🔍 Enter Student ID (e.g. 2024CS01)">
+                <button id="searchBtn" class="hero-button">View Results</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 1. The Stats Banner -->
+    <section class="hero-stats-banner">
+        <div class="stats-top-border"></div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 class="stat-number">15,000+</h3>
+                <p class="stat-text">Students</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number">120+</h3>
+                <p class="stat-text">Programs</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number">50+</h3>
+                <p class="stat-text">Departments</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number">99.9%</h3>
+                <p class="stat-text">Uptime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. The Features Section -->
+    <section class="hero-features-section">
+        <div class="features-header">
+            <h2>Everything You Need</h2>
+            <p>ResultSphere provides a comprehensive suite of tools for students and faculty.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Card 1 -->
+            <div class="feature-card">
+                <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+                <h3 class="feature-title">GPA Tracking</h3>
+                <p class="feature-desc">Monitor your academic progress and track your GPA across all semesters effortlessly.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="feature-card">
+                <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h3 class="feature-title">Secure Access</h3>
+                <p class="feature-desc">Enterprise-grade security ensuring your academic records are private and protected.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="feature-card">
+                <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                <h3 class="feature-title">Real-time Updates</h3>
+                <p class="feature-desc">Get instantly notified when new grades, notices, or university updates are published.</p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="feature-card">
+                <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+                <h3 class="feature-title">Download Transcripts</h3>
+                <p class="feature-desc">Generate and download official provisional transcripts with a single click.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. The Footer -->
+    <footer class="hero-footer" style="display: flex; justify-content: space-between;">
+        <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 8px;"><path d="M9 21V12.9999C9 12.9999 9.00001 8.99999 12 8.99999C15 8.99999 15 13 15 13V21M5 21H19M3 6.99999L12 3L21 6.99999" stroke="#1e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>ResultSphere</span>
+        </div>
+        <div class="footer-copyright">© 2026 ResultSphere. All rights reserved.</div>
+    </footer>
+
+    <!-- 5. Mock Database & Search Logic -->
+    <script>
+        // --- STEP 1: Define the Mock Database ---
+        const studentDatabase = [
+            {
+                name: "Gourav",
+                rollNo: "2024CS01",
+                course: "B.Tech CSE",
+                semester: "6th Semester",
+                batch: "2022-2026",
+                email: "student@iilm.edu",
+                phone: "+91-9876543210",
+                dob: "15 Aug 2003",
+                address: "Greater Noida, UP",
+                results: {
+                    "1st Semester": [
+                        { subjectName: "Mathematics I", maxMarks: 100, marksObtained: 88, grade: "A+" },
+                        { subjectName: "Physics", maxMarks: 100, marksObtained: 82, grade: "A+" },
+                        { subjectName: "Basic Electrical Engineering", maxMarks: 100, marksObtained: 90, grade: "O" },
+                        { subjectName: "Programming for Problem Solving", maxMarks: 100, marksObtained: 95, grade: "O" }
+                    ],
+                    "2nd Semester": [
+                        { subjectName: "Mathematics II", maxMarks: 100, marksObtained: 85, grade: "A+" },
+                        { subjectName: "Chemistry", maxMarks: 100, marksObtained: 80, grade: "A+" },
+                        { subjectName: "Engineering Graphics", maxMarks: 100, marksObtained: 78, grade: "A" },
+                        { subjectName: "Data Structures", maxMarks: 100, marksObtained: 92, grade: "O" }
+                    ],
+                    "3rd Semester": [
+                        { subjectName: "Mathematics III", maxMarks: 100, marksObtained: 89, grade: "A+" },
+                        { subjectName: "Object Oriented Programming", maxMarks: 100, marksObtained: 94, grade: "O" },
+                        { subjectName: "Analog and Digital Electronics", maxMarks: 100, marksObtained: 84, grade: "A+" },
+                        { subjectName: "Computer Organization", maxMarks: 100, marksObtained: 88, grade: "A+" }
+                    ],
+                    "4th Semester": [
+                        { subjectName: "Discrete Mathematics", maxMarks: 100, marksObtained: 91, grade: "O" },
+                        { subjectName: "Operating Systems", maxMarks: 100, marksObtained: 87, grade: "A+" },
+                        { subjectName: "Design and Analysis of Algorithms", maxMarks: 100, marksObtained: 90, grade: "O" },
+                        { subjectName: "Database Management Systems", maxMarks: 100, marksObtained: 95, grade: "O" }
+                    ],
+                    "5th Semester": [
+                        { subjectName: "Formal Languages and Automata", maxMarks: 100, marksObtained: 85, grade: "A+" },
+                        { subjectName: "Computer Networks", maxMarks: 100, marksObtained: 89, grade: "A+" },
+                        { subjectName: "Software Engineering", maxMarks: 100, marksObtained: 92, grade: "O" },
+                        { subjectName: "Microprocessors", maxMarks: 100, marksObtained: 86, grade: "A+" }
+                    ],
+                    "6th Semester": [
+                        { subjectName: "Web Technology", maxMarks: 100, marksObtained: 95, grade: "O" },
+                        { subjectName: "Machine Learning", maxMarks: 100, marksObtained: 92, grade: "O" },
+                        { subjectName: "Python Programming", maxMarks: 100, marksObtained: 88, grade: "A+" },
+                        { subjectName: "Compiler Design", maxMarks: 100, marksObtained: 85, grade: "A+" }
+                    ]
+                }
+            },
+            {
+                name: "Aarav Sharma",
+                rollNo: "2024CS02",
+                course: "B.Tech CSE",
+                semester: "6th Semester",
+                batch: "2022-2026",
+                email: "aarav.sharma@iilm.edu",
+                phone: "+91-9876543211",
+                dob: "10 Nov 2004",
+                address: "New Delhi, DL",
+                results: {
+                    "1st Semester": [
+                        { subjectName: "Mathematics I", maxMarks: 100, marksObtained: 65, grade: "B+" },
+                        { subjectName: "Physics", maxMarks: 100, marksObtained: 68, grade: "B+" },
+                        { subjectName: "Basic Electrical Engineering", maxMarks: 100, marksObtained: 60, grade: "B+" },
+                        { subjectName: "Programming for Problem Solving", maxMarks: 100, marksObtained: 70, grade: "A" }
+                    ],
+                    "2nd Semester": [
+                        { subjectName: "Mathematics II", maxMarks: 100, marksObtained: 62, grade: "B+" },
+                        { subjectName: "Chemistry", maxMarks: 100, marksObtained: 66, grade: "B+" },
+                        { subjectName: "Engineering Graphics", maxMarks: 100, marksObtained: 58, grade: "B" },
+                        { subjectName: "Data Structures", maxMarks: 100, marksObtained: 72, grade: "A" }
+                    ],
+                    "3rd Semester": [
+                        { subjectName: "Mathematics III", maxMarks: 100, marksObtained: 60, grade: "B+" },
+                        { subjectName: "Object Oriented Programming", maxMarks: 100, marksObtained: 75, grade: "A" },
+                        { subjectName: "Analog and Digital Electronics", maxMarks: 100, marksObtained: 64, grade: "B+" },
+                        { subjectName: "Computer Organization", maxMarks: 100, marksObtained: 68, grade: "B+" }
+                    ],
+                    "4th Semester": [
+                        { subjectName: "Discrete Mathematics", maxMarks: 100, marksObtained: 65, grade: "B+" },
+                        { subjectName: "Operating Systems", maxMarks: 100, marksObtained: 70, grade: "A" },
+                        { subjectName: "Design and Analysis of Algorithms", maxMarks: 100, marksObtained: 66, grade: "B+" },
+                        { subjectName: "Database Management Systems", maxMarks: 100, marksObtained: 74, grade: "A" }
+                    ],
+                    "5th Semester": [
+                        { subjectName: "Formal Languages and Automata", maxMarks: 100, marksObtained: 61, grade: "B+" },
+                        { subjectName: "Computer Networks", maxMarks: 100, marksObtained: 69, grade: "B+" },
+                        { subjectName: "Software Engineering", maxMarks: 100, marksObtained: 72, grade: "A" },
+                        { subjectName: "Microprocessors", maxMarks: 100, marksObtained: 65, grade: "B+" }
+                    ],
+                    "6th Semester": [
+                        { subjectName: "Web Technology", maxMarks: 100, marksObtained: 75, grade: "A" },
+                        { subjectName: "Machine Learning", maxMarks: 100, marksObtained: 68, grade: "B+" },
+                        { subjectName: "Python Programming", maxMarks: 100, marksObtained: 70, grade: "A" },
+                        { subjectName: "Compiler Design", maxMarks: 100, marksObtained: 62, grade: "B+" }
+                    ]
+                }
+            },
+            {
+                name: "Priya Patel",
+                rollNo: "2024CS03",
+                course: "B.Tech CSE",
+                semester: "6th Semester",
+                batch: "2022-2026",
+                email: "priya.patel@iilm.edu",
+                phone: "+91-9876543212",
+                dob: "22 Mar 2004",
+                address: "Gurugram, HR",
+                results: {
+                    "1st Semester": [
+                        { subjectName: "Mathematics I", maxMarks: 100, marksObtained: 95, grade: "O" },
+                        { subjectName: "Physics", maxMarks: 100, marksObtained: 94, grade: "O" },
+                        { subjectName: "Basic Electrical Engineering", maxMarks: 100, marksObtained: 98, grade: "O" },
+                        { subjectName: "Programming for Problem Solving", maxMarks: 100, marksObtained: 99, grade: "O" }
+                    ],
+                    "2nd Semester": [
+                        { subjectName: "Mathematics II", maxMarks: 100, marksObtained: 96, grade: "O" },
+                        { subjectName: "Chemistry", maxMarks: 100, marksObtained: 95, grade: "O" },
+                        { subjectName: "Engineering Graphics", maxMarks: 100, marksObtained: 92, grade: "O" },
+                        { subjectName: "Data Structures", maxMarks: 100, marksObtained: 98, grade: "O" }
+                    ],
+                    "3rd Semester": [
+                        { subjectName: "Mathematics III", maxMarks: 100, marksObtained: 97, grade: "O" },
+                        { subjectName: "Object Oriented Programming", maxMarks: 100, marksObtained: 99, grade: "O" },
+                        { subjectName: "Analog and Digital Electronics", maxMarks: 100, marksObtained: 94, grade: "O" },
+                        { subjectName: "Computer Organization", maxMarks: 100, marksObtained: 96, grade: "O" }
+                    ],
+                    "4th Semester": [
+                        { subjectName: "Discrete Mathematics", maxMarks: 100, marksObtained: 98, grade: "O" },
+                        { subjectName: "Operating Systems", maxMarks: 100, marksObtained: 95, grade: "O" },
+                        { subjectName: "Design and Analysis of Algorithms", maxMarks: 100, marksObtained: 97, grade: "O" },
+                        { subjectName: "Database Management Systems", maxMarks: 100, marksObtained: 99, grade: "O" }
+                    ],
+                    "5th Semester": [
+                        { subjectName: "Formal Languages and Automata", maxMarks: 100, marksObtained: 94, grade: "O" },
+                        { subjectName: "Computer Networks", maxMarks: 100, marksObtained: 96, grade: "O" },
+                        { subjectName: "Software Engineering", maxMarks: 100, marksObtained: 98, grade: "O" },
+                        { subjectName: "Microprocessors", maxMarks: 100, marksObtained: 95, grade: "O" }
+                    ],
+                    "6th Semester": [
+                        { subjectName: "Web Technology", maxMarks: 100, marksObtained: 98, grade: "O" },
+                        { subjectName: "Machine Learning", maxMarks: 100, marksObtained: 97, grade: "O" },
+                        { subjectName: "Python Programming", maxMarks: 100, marksObtained: 99, grade: "O" },
+                        { subjectName: "Compiler Design", maxMarks: 100, marksObtained: 96, grade: "O" }
+                    ]
+                }
+            },
+            {
+                name: "Rahul Verma",
+                rollNo: "2024CS04",
+                course: "B.Tech CSE",
+                semester: "6th Semester",
+                batch: "2022-2026",
+                email: "rahul.verma@iilm.edu",
+                phone: "+91-9876543213",
+                dob: "05 Jun 2003",
+                address: "Noida, UP",
+                results: {
+                    "1st Semester": [
+                        { subjectName: "Mathematics I", maxMarks: 100, marksObtained: 55, grade: "B" },
+                        { subjectName: "Physics", maxMarks: 100, marksObtained: 60, grade: "B+" },
+                        { subjectName: "Basic Electrical Engineering", maxMarks: 100, marksObtained: 58, grade: "B" },
+                        { subjectName: "Programming for Problem Solving", maxMarks: 100, marksObtained: 65, grade: "B+" }
+                    ],
+                    "2nd Semester": [
+                        { subjectName: "Mathematics II", maxMarks: 100, marksObtained: 50, grade: "B" },
+                        { subjectName: "Chemistry", maxMarks: 100, marksObtained: 54, grade: "B" },
+                        { subjectName: "Engineering Graphics", maxMarks: 100, marksObtained: 62, grade: "B+" },
+                        { subjectName: "Data Structures", maxMarks: 100, marksObtained: 55, grade: "B" }
+                    ],
+                    "3rd Semester": [
+                        { subjectName: "Mathematics III", maxMarks: 100, marksObtained: 35, grade: "F" },
+                        { subjectName: "Object Oriented Programming", maxMarks: 100, marksObtained: 60, grade: "B+" },
+                        { subjectName: "Analog and Digital Electronics", maxMarks: 100, marksObtained: 50, grade: "B" },
+                        { subjectName: "Computer Organization", maxMarks: 100, marksObtained: 52, grade: "B" }
+                    ],
+                    "4th Semester": [
+                        { subjectName: "Discrete Mathematics", maxMarks: 100, marksObtained: 45, grade: "C" },
+                        { subjectName: "Operating Systems", maxMarks: 100, marksObtained: 55, grade: "B" },
+                        { subjectName: "Design and Analysis of Algorithms", maxMarks: 100, marksObtained: 50, grade: "B" },
+                        { subjectName: "Database Management Systems", maxMarks: 100, marksObtained: 60, grade: "B+" }
+                    ],
+                    "5th Semester": [
+                        { subjectName: "Formal Languages and Automata", maxMarks: 100, marksObtained: 40, grade: "C" },
+                        { subjectName: "Computer Networks", maxMarks: 100, marksObtained: 52, grade: "B" },
+                        { subjectName: "Software Engineering", maxMarks: 100, marksObtained: 58, grade: "B" },
+                        { subjectName: "Microprocessors", maxMarks: 100, marksObtained: 45, grade: "C" }
+                    ],
+                    "6th Semester": [
+                        { subjectName: "Web Technology", maxMarks: 100, marksObtained: 60, grade: "B+" },
+                        { subjectName: "Machine Learning", maxMarks: 100, marksObtained: 55, grade: "B" },
+                        { subjectName: "Python Programming", maxMarks: 100, marksObtained: 58, grade: "B" },
+                        { subjectName: "Compiler Design", maxMarks: 100, marksObtained: 28, grade: "F" }
+                    ]
+                }
+            },
+            {
+                name: "Kavya Singh",
+                rollNo: "2024CS05",
+                course: "B.Tech CSE",
+                semester: "6th Semester",
+                batch: "2022-2026",
+                email: "kavya.singh@iilm.edu",
+                phone: "+91-9876543214",
+                dob: "18 Dec 2004",
+                address: "Delhi, DL",
+                results: {
+                    "1st Semester": [
+                        { subjectName: "Mathematics I", maxMarks: 100, marksObtained: 75, grade: "A" },
+                        { subjectName: "Physics", maxMarks: 100, marksObtained: 70, grade: "A" },
+                        { subjectName: "Basic Electrical Engineering", maxMarks: 100, marksObtained: 72, grade: "A" },
+                        { subjectName: "Programming for Problem Solving", maxMarks: 100, marksObtained: 78, grade: "A" }
+                    ],
+                    "2nd Semester": [
+                        { subjectName: "Mathematics II", maxMarks: 100, marksObtained: 74, grade: "A" },
+                        { subjectName: "Chemistry", maxMarks: 100, marksObtained: 76, grade: "A" },
+                        { subjectName: "Engineering Graphics", maxMarks: 100, marksObtained: 70, grade: "A" },
+                        { subjectName: "Data Structures", maxMarks: 100, marksObtained: 80, grade: "A+" }
+                    ],
+                    "3rd Semester": [
+                        { subjectName: "Mathematics III", maxMarks: 100, marksObtained: 68, grade: "B+" },
+                        { subjectName: "Object Oriented Programming", maxMarks: 100, marksObtained: 82, grade: "A+" },
+                        { subjectName: "Analog and Digital Electronics", maxMarks: 100, marksObtained: 75, grade: "A" },
+                        { subjectName: "Computer Organization", maxMarks: 100, marksObtained: 77, grade: "A" }
+                    ],
+                    "4th Semester": [
+                        { subjectName: "Discrete Mathematics", maxMarks: 100, marksObtained: 70, grade: "A" },
+                        { subjectName: "Operating Systems", maxMarks: 100, marksObtained: 32, grade: "F" },
+                        { subjectName: "Design and Analysis of Algorithms", maxMarks: 100, marksObtained: 75, grade: "A" },
+                        { subjectName: "Database Management Systems", maxMarks: 100, marksObtained: 80, grade: "A+" }
+                    ],
+                    "5th Semester": [
+                        { subjectName: "Formal Languages and Automata", maxMarks: 100, marksObtained: 65, grade: "B+" },
+                        { subjectName: "Computer Networks", maxMarks: 100, marksObtained: 74, grade: "A" },
+                        { subjectName: "Software Engineering", maxMarks: 100, marksObtained: 78, grade: "A" },
+                        { subjectName: "Microprocessors", maxMarks: 100, marksObtained: 70, grade: "A" }
+                    ],
+                    "6th Semester": [
+                        { subjectName: "Web Technology", maxMarks: 100, marksObtained: 82, grade: "A+" },
+                        { subjectName: "Machine Learning", maxMarks: 100, marksObtained: 75, grade: "A" },
+                        { subjectName: "Python Programming", maxMarks: 100, marksObtained: 80, grade: "A+" },
+                        { subjectName: "Compiler Design", maxMarks: 100, marksObtained: 72, grade: "A" }
+                    ]
+                }
+            }
+        ];
+
+        // --- Dynamic Navbar Logic ---
+        const activeSession = localStorage.getItem('activeStudent');
+        if (activeSession) {
+            const student = JSON.parse(activeSession);
+            const firstName = student.name.split(' ')[0]; // Extract first name
+            
+            const authBtn = document.getElementById('authBtn');
+            authBtn.textContent = '👤 Hi, ' + firstName;
+            authBtn.href = 'profile.html';
+            
+            const logoutBtn = document.createElement('button');
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.className = 'hero-logout-btn';
+            logoutBtn.addEventListener('click', function() {
+                localStorage.removeItem('activeStudent');
+                window.location.reload();
+            });
+            
+            document.getElementById('navLinks').appendChild(logoutBtn);
+        }
+
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('studentSearchInput');
+
+        searchBtn.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const enteredId = searchInput.value.trim();
+            const selectedSem = document.getElementById('semesterSelect').value;
+            
+            if (!selectedSem) {
+                alert('Please select a semester.');
+                return;
+            }
+
+            const foundStudent = studentDatabase.find(student => student.rollNo === enteredId);
+
+            if (!foundStudent) {
+                alert('Student ID not found. Please try again.');
+            } else {
+                // Save the selected semester
+                localStorage.setItem('selectedSemester', selectedSem);
+                // Save the found student specifically to 'activeStudent' in localStorage
+                localStorage.setItem('activeStudent', JSON.stringify(foundStudent));
+                // Redirect to the Result page
+                window.location.href = 'result.html';
+            }
+        });
+    </script>
+</body>
+</html>

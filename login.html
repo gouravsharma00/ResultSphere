@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere | Secure Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="login-split-container">
+        
+        <!-- Left Side: Rich Branding -->
+        <div class="login-left">
+            <div class="branding-content">
+                <div class="branding-logo">🎓 ResultSphere</div>
+                <h1 class="welcome-heading">Welcome to your Academic Portal</h1>
+                <p class="subtitle-text">Empowering your educational journey with instant, secure access to your academic performance and university updates.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: The Form -->
+        <div class="login-right">
+            <div class="login-form-container">
+                <h2>Student Login</h2>
+                <p class="form-subtitle">Enter your details to securely view your results</p>
+                
+                <!-- Floating Label Input: Roll Number -->
+                <div class="floating-group">
+                    <input type="text" id="rollInput" class="floating-input" placeholder=" " required>
+                    <label class="floating-label" for="rollInput">University Roll Number</label>
+                </div>
+
+                <!-- Floating Label Input: Password -->
+                <div class="floating-group">
+                    <input type="password" id="passwordInput" class="floating-input" placeholder=" " required>
+                    <label class="floating-label" for="passwordInput">Password</label>
+                </div>
+
+                <!-- Dynamic Error Message Container -->
+                <div id="loginError" class="auth-message error hidden"></div>
+
+                <button id="loginBtn" class="btn-primary login-btn">Login to Portal</button>
+                
+                <div class="admin-link-container">
+                    <p class="admin-text">Are you a faculty member?</p>
+                    <a href="admin-login.html" class="btn-secondary admin-btn">Admin Portal</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

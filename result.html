@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere | Marksheet</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Premium Typography for Certificate Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">🎓</div>
+            <div>
+                <h1>ResultSphere</h1>
+                <p>Advanced Student Result Portal</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="glass-back-wrapper">
+            <button id="global-back-btn" class="glass-back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-svg"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span class="back-text">Back</span>
+            </button>
+        </div>
+
+        <!-- State 1: Verification Form -->
+        <div id="verificationCard" class="result-card">
+            <div class="card-header" style="justify-content: center; border-bottom: none; margin-bottom: 0;">
+                <h3 style="color: #1e40af; margin: 0;">Verify Student Details</h3>
+            </div>
+            <p style="text-align: center; color: #64748b; margin-bottom: 25px;">For security, please verify your details to securely view the marksheet.</p>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; color: #475569; font-weight: 600;">Full Name</label>
+                <input type="text" id="verifyName" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; color: #0f172a; box-sizing: border-box;" placeholder="Enter your registered name">
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; margin-bottom: 8px; color: #475569; font-weight: 600;">Roll Number</label>
+                <input type="text" id="verifyRoll" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; color: #0f172a; box-sizing: border-box;" placeholder="Enter your university roll number">
+            </div>
+            
+            <button id="fetchResultBtn" class="btn-primary">Fetch Result</button>
+        </div>
+
+        <!-- State 2: Official Marksheet Container -->
+        <article id="marksheetContainer" class="official-document hidden">
+            <!-- Certificate Ribbon -->
+            <div class="doc-ribbon">OFFICIAL & VERIFIED</div>
+            
+            <header class="doc-header">
+                <div class="doc-logo">🎓</div>
+                <h2 class="doc-title">PROVISIONAL ACADEMIC TRANSCRIPT</h2>
+            </header>
+            
+            <!-- 2-Column Student Info Grid -->
+            <section class="doc-info-grid">
+                <div class="info-row"><span class="info-label">Student Name:</span> <span class="info-data" id="res-name"></span></div>
+                <div class="info-row"><span class="info-label">Roll Number:</span> <span class="info-data" id="res-roll"></span></div>
+                <div class="info-row"><span class="info-label">Course:</span> <span class="info-data" id="res-course"></span></div>
+                <div class="info-row"><span class="info-label">Semester:</span> <span class="info-data" id="res-sem"></span></div>
+            </section>
+
+            <!-- Responsive Premium Grade Table -->
+            <section class="doc-table-section">
+                <div class="table-responsive">
+                    <table class="official-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Max Marks</th>
+                                <th>Marks Obtained</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CS-601</td>
+                                <td>Web Technology</td>
+                                <td>100</td>
+                                <td id="res-mWT" class="marks-col"></td>
+                                <td id="res-gWT" class="marks-col"></td>
+                                <td id="res-sWT"></td>
+                            </tr>
+                            <tr>
+                                <td>CS-602</td>
+                                <td>Machine Learning</td>
+                                <td>100</td>
+                                <td id="res-mML" class="marks-col"></td>
+                                <td id="res-gML" class="marks-col"></td>
+                                <td id="res-sML"></td>
+                            </tr>
+                            <tr>
+                                <td>CS-603</td>
+                                <td>Python</td>
+                                <td>100</td>
+                                <td id="res-mPython" class="marks-col"></td>
+                                <td id="res-gPython" class="marks-col"></td>
+                                <td id="res-sPython"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3-Box Summary Footer -->
+            <section class="doc-summary flex-3-box">
+                <div class="summary-box">
+                    <span class="label">Total Marks</span>
+                    <span class="value"><span id="res-total"></span> / 300</span>
+                </div>
+                <div class="summary-box">
+                    <span class="label">Percentage</span>
+                    <span class="value"><span id="res-percent"></span>%</span>
+                </div>
+                <div class="summary-box" id="res-status-box">
+                    <span class="label">Final Status</span>
+                    <span class="value" id="res-status"></span>
+                </div>
+            </section>
+
+            <!-- Authentication Footer -->
+            <section class="auth-footer">
+                <div class="qr-placeholder">
+                    <div class="qr-box"></div>
+                    <span>Scan for Digital Verification</span>
+                </div>
+                <div class="signature-box">
+                    <div class="digital-signature">Dr. P. Upadhyay</div>
+                    <div class="signature-line"></div>
+                    <span class="signature-title">Controller of Examinations, IILM University</span>
+                </div>
+            </section>
+        </article>
+
+        <!-- The Action Bar -->
+        <div id="actionBar" class="action-bar hidden">
+            <button id="print-btn" class="btn-primary print-btn">🖨️ Download PDF / Print Official Transcript</button>
+        </div>
+    </main>
+
+    <script src="result.js"></script>
+</body>
+</html>

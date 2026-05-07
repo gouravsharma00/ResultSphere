@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere | Secure Login</title>
+    <link rel="stylesheet" href="simple-login.css">
+</head>
+<body>
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>ResultSphere</h1>
+                <p>Student Portal Login</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="roll-input" placeholder="Roll Number (e.g., 2024CS01)" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="pass-input" placeholder="Password" required>
+                </div>
+                
+                <div id="error-msg" style="color: red; text-align: center; margin-top: 10px; margin-bottom: 15px; font-weight: 500; min-height: 20px;"></div>
+                
+                <button type="submit" class="submit-btn">Secure Login</button>
+            </form>
+        </div>
+    </main>
+    <script src="simple-login.js"></script>
+</body>
+</html>

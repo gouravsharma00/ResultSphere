@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere | Student Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Existing Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">🎓</div>
+            <div>
+                <h1>ResultSphere</h1>
+                <p>Advanced Student Result Portal</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Profile Container -->
+    <main class="container profile-page-container">
+        
+        <!-- Navigation -->
+        <div style="margin-bottom: 20px;">
+            <a href="dashboard.html" class="btn-secondary" style="text-decoration: none;">← Back to Dashboard</a>
+        </div>
+
+        <div class="profile-layout-grid">
+            
+            <!-- Left Column: ID Card -->
+            <div class="profile-card id-card">
+                <div class="avatar-circle">
+                    <span id="pInitials">G</span>
+                </div>
+                <h2 class="profile-name" id="pName">Student Name</h2>
+                <p class="profile-roll" id="pRoll">Roll No</p>
+                <p class="profile-course" id="pCourse">Course Name</p>
+                <div style="margin-top: 20px;">
+                    <span class="badge badge-pass">Status: Active</span>
+                </div>
+            </div>
+
+            <!-- Right Column: Detailed Info -->
+            <div class="profile-card details-card">
+                
+                <div class="info-section">
+                    <h3>Academic Details</h3>
+                    <div class="info-grid">
+                        <div class="info-item"><span class="label">Current Semester</span><span class="value" id="pSem"></span></div>
+                        <div class="info-item"><span class="label">Batch</span><span class="value" id="pBatch"></span></div>
+                        <div class="info-item"><span class="label">University</span><span class="value" id="pUni">IILM University</span></div>
+                        <div class="info-item"><span class="label">Enrollment Status</span><span class="value" id="pStatus">Full-Time</span></div>
+                    </div>
+                </div>
+
+                <div class="info-section" style="margin-bottom: 0;">
+                    <h3>Personal Details</h3>
+                    <div class="info-grid">
+                        <div class="info-item"><span class="label">Email Address</span><span class="value" id="pEmail"></span></div>
+                        <div class="info-item"><span class="label">Phone Number</span><span class="value" id="pPhone"></span></div>
+                        <div class="info-item"><span class="label">Date of Birth</span><span class="value" id="pDOB"></span></div>
+                        <div class="info-item"><span class="label">Address</span><span class="value" id="pAddress"></span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.onload = function() {
+            // 1. Security Check
+            const studentData = localStorage.getItem('activeStudent');
+            if (!studentData) return window.location.href = "index.html";
+            
+            const student = JSON.parse(studentData);
+            
+            // 2. Map data to the left column (ID Card)
+            document.getElementById('pName').textContent = student.name;
+            document.getElementById('pInitials').textContent = student.name.charAt(0).toUpperCase();
+            document.getElementById('pRoll').textContent = student.rollNo;
+            document.getElementById('pCourse').textContent = student.course;
+            
+            // 3. Map data to right column (Details)
+            document.getElementById('pSem').textContent = student.semester;
+            document.getElementById('pBatch').textContent = student.batch;
+            document.getElementById('pEmail').textContent = student.email;
+            document.getElementById('pPhone').textContent = student.phone;
+            document.getElementById('pDOB').textContent = student.dob;
+            document.getElementById('pAddress').textContent = student.address;
+        };
+    </script>
+</body>
+</html>

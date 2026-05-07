@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - IILM University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header" style="background: linear-gradient(135deg, #0f172a 0%, #334155 100%);">
+        <div class="header-content">
+            <div class="logo">🛡️</div>
+            <div>
+                <h1>IILM University Admin Panel</h1>
+                <p>Student Management System</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 900px;">
+        <div class="card-header" style="margin-top: 20px;">
+            <h2>Enrolled Students</h2>
+            <div>
+                <button class="btn-primary" style="display: inline-block; width: auto; padding: 8px 16px; margin-right: 10px;" onclick="alert('Student Addition Form Coming Soon!')">+ Add Student</button>
+                <a href="index.html" class="btn-secondary">Logout</a>
+            </div>
+        </div>
+
+        <div class="table-container result-card" style="padding: 20px;">
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Roll Number</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Semester</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+    <script>
+        window.onload = function() {
+            const tbody = document.getElementById('studentTableBody');
+            mockDatabase.forEach(student => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td><strong>${student.rollNo}</strong></td><td>${student.name}</td><td>${student.course}</td><td>${student.semester}</td>
+                        <td><button class="btn-secondary" style="padding: 4px 8px; font-size: 0.8rem;" onclick="viewStudent('${student.rollNo}', '${student.semester}')">View Result</button></td>
+                    </tr>`;
+            });
+        };
+        function viewStudent(roll, sem) {
+            localStorage.setItem('activeStudent', JSON.stringify(mockDatabase.find(s => s.rollNo === roll && s.semester === sem)));
+            window.location.href = "result.html";
+        }
+    </script>
+</body>
+</html>

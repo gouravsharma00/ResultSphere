@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere | Admin Portal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .admin-card {
+            background: #1e293b; /* Deep Navy Blue Faculty Theme */
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .admin-card h2 { margin-top: 0; color: #f8fafc; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 8px; color: #cbd5e1; font-size: 14px; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            background: #0f172a;
+            color: white;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .input-group input:focus { outline: none; border-color: #3b82f6; }
+        .login-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover { background-color: #2563eb; }
+        .error-message { color: #fca5a5; margin-top: 15px; display: none; font-size: 14px; }
+        .back-link { display: block; margin-top: 20px; color: #94a3b8; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #cbd5e1; }
+    </style>
+</head>
+<body>
+    <div class="admin-card">
+        <h2>Faculty Portal Access</h2>
+        <form id="adminLoginForm">
+            <div class="input-group">
+                <label>Admin Username</label>
+                <input type="text" id="adminUsername" placeholder="e.g. admin01" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="adminPassword" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="login-btn">Authenticate</button>
+            <p id="adminLoginError" class="error-message">Unauthorized Credentials.</p>
+        </form>
+        <a href="index.html" class="back-link">&larr; Return to Student Portal</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('adminLoginForm');
+            const userIn = document.getElementById('adminUsername');
+            const passIn = document.getElementById('adminPassword');
+            const errorMsg = document.getElementById('adminLoginError');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                errorMsg.style.display = 'none';
+
+                const userVal = userIn.value.trim();
+                const passVal = passIn.value.trim();
+
+                // Strict hardcoded check
+                if (userVal === 'admin01' && passVal === 'adminoo@') {
+                    sessionStorage.setItem('activeAdmin', userVal);
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    errorMsg.style.display = 'block';
+                    passIn.value = ''; // Clear password field for security
+                }
+            });
+        });
+    </script>
+</body>
+</html>
